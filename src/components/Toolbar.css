@@ -1,0 +1,86 @@
+/* src/components/Toolbar.css */
+
+.toolbar-container {
+    position: absolute; /* Position at the top */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f0f0f0;
+    padding: 8px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Spacing between toolbar items */
+    z-index: 100; /* Make sure it's above the canvas */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+  
+  .tool-button {
+    padding: 8px 12px;
+    font-size: 18px; /* Adjust icon size if needed */
+    line-height: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .tool-button:hover {
+    background-color: #e9e9e9;
+    border-color: #adadad;
+  }
+  
+  .tool-button.active {
+    background-color: #dbeafe; /* Tailwind's blue-100 equivalent */
+    border-color: #93c5fd; /* Tailwind's blue-300 equivalent */
+    color: #2563eb; /* Tailwind's blue-600 equivalent */
+  }
+  
+  .tool-button-danger{
+      background-color: #fee2e2; /* red-100 */
+      border-color: #fca5a5; /* red-300 */
+      color: #dc2626; /* red-600 */
+  }
+  .tool-button-danger:hover {
+      background-color: #fecaca; /* red-200 */
+      border-color: #f87171; /* red-400 */
+  }
+  
+  .tool-button-save {
+      background-color: #dcfce7; /* green-100 */
+      border-color: #86efac; /* green-300 */
+      color: #16a34a; /* green-600 */
+  }
+  .tool-button-save:hover {
+       background-color: #bbf7d0; /* green-200 */
+      border-color: #4ade80; /* green-400 */
+  }
+  
+  
+  .color-input {
+    width: 40px;
+    height: 35px;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  .stroke-width-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: sans-serif;
+      font-size: 14px;
+  }
+  .stroke-slider {
+      cursor: pointer;
+  }
+  .stroke-value {
+      min-width: 20px; /* Prevent layout shifts */
+      text-align: right;
+      font-weight: bold;
+  }
