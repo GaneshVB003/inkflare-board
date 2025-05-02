@@ -1,54 +1,44 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Add styles for the toggle button */
+.toggle-toolbar-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* left is set dynamically via inline style */
+  z-index: 101; /* Above toolbar */
+  padding: 10px 5px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  box-shadow: 2px 0px 5px rgba(0,0,0,0.1);
+  transition: left 0.3s ease-in-out; /* Smooth transition */
+  font-weight: bold;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* Class to hide the toolbar wrapper */
+.toolbar-wrapper.hidden {
+  transform: translateX(-100%); /* Move off-screen */
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction when hidden */
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.toolbar-wrapper {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+   /* Keep position relative so button positioning works */
+   position: relative;
+   z-index: 100;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-/* src/App.css */
-body {
-  margin: 0; /* Remove default body margin */
-  overflow: hidden; /* Prevent scrolling */
-}
-
-/* Add other app-level styles if needed */
-.AppContainer {
-  width: 100vw;
-  height: 100vh;
-  /* background-color: #eee;  Optional app background */
+/* Zoom indicator style */
+.zoom-indicator {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 50;
 }
